@@ -5,7 +5,8 @@ import fetch from 'node-fetch'
 export const redditToolDefinition = {
   name: 'reddit',
   parameters: z.object({}),
-  description: 'get the latest posts from Reddit',
+  description:
+    'Get the latest posts from Reddit. Use this tool if user asks about reddit posts stats.',
 }
 
 type Args = z.infer<typeof redditToolDefinition.parameters>
