@@ -17,10 +17,7 @@ export const generateImageToolDefinition = {
 
 type Args = z.infer<typeof generateImageToolDefinition.parameters>
 
-export const generateImage: ToolFn<Args, string> = async ({
-  toolArgs,
-  userMessage,
-}) => {
+export const generateImage: ToolFn<Args, string> = async ({ toolArgs }) => {
   const response = await openai.images.generate({
     model: 'dall-e-3',
     prompt: toolArgs.prompt,
